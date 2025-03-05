@@ -10,7 +10,7 @@ function Login() {
     const email = e.target.email.value;
     const password = e.target.password.value;
     try {
-      const response = await axios.post(`/api/auth/login`, { email, password });
+      const response = await axios.post(`https://back-task2.onrender.com/api/auth/login`, { email, password });
       const { id: loggedInUserId } = response.data;
       localStorage.setItem('loggedInUserId', loggedInUserId);
       navigate('/');
